@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+<!-- Font awesome ki icons use krny keliye copy below link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
     <link rel="stylesheet" href="home.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -18,12 +42,12 @@
             <img src="vl-logo-1.1.webp" alt="Logo">
         </div>
         <ul class="nav-links">
-            <li><a href="#" style="color: #ffffff;">Home</a></li>
-            <li><a href="#" style="color: #ffffff;">About</a></li>
-            <li><a href="#" style="color: #ffffff;">Services</a></li>
-            <li><a href="#" style="color: #ffffff;">Case Studies</a></li>
-            <li><a href="#" style="color: #ffffff;">Blogs</a></li>
-                <li><a href="#" style="color: #ffffff;">Pages</a></li>
+            <li><a href="home.html" style="color: #ffffff; border-bottom: 2px solid #ffffff; padding-bottom: 2px;">Home</a></li>
+            <li><a href="aboutus.html" style="color: #ffffff;">About</a></li>
+            <li><a href="servicepage.html" style="color: #ffffff;">Services</a></li>
+            <li><a href="#HomepageIV" style="color: #ffffff;">Case Studies</a></li>
+            <li><a href="#HomepageVIII" style="color: #ffffff;">Blogs</a></li>
+            <li><a href="contact.html" style="color: #ffffff;">Contact</a></li>
         </ul>
         <button class="nav-btn">Get Started <span>&#8599;</span> </button>
     </div>
@@ -70,7 +94,13 @@
         <div class="left-side">
             <img src="vl-about-4.1.webp" alt="Image 1">
             <img src="vl-about-top-sm-4.2.webp" alt="Image 3">
-            <img src="vl-about-poliogon.svg" alt="Image 2" class="polygon">
+            <div class="polygon-container">
+                <img src="vl-about-poliogon.svg" alt="Image 2" class="polygon">
+                <div class="polygon-content">
+                    <span style="padding-left: 20px;">12+</span>
+                    <p style="color: white;">Years Experience</p>
+                </div>
+            </div>
         </div>
 
         <div class="right-side">
@@ -150,67 +180,100 @@
     <div class="case-studies-container">
         <h4 class="case-studies-tag">CASE STUDIES</h4>
         <h2 class="case-studies-title">Proof of Excellence in Action</h2>
-        <div class="slider-wrapper">
-            <button class="slide-btn left">&#8592;</button>
-        <div class="case-studies-cards">
-            <div class="case-studies-card">
-                <img src="vl-studies-2.1.webp" alt="Case Study 1">
-                 <h3>John Doe</h3>
+        <div class="owl-carousel owl-theme case-studies-carousel">
+            <div class="item">
+                <div class="case-studies-card">
+                    <img src="vl-studies-2.1.webp" alt="Case Study 1">
+                    <h3>John Doe</h3>
+                </div>
             </div>
-            <div class="case-studies-card">
-                <img src="vl-studies-2.2.webp" alt="Case Study 2">
-                <h3>Jane Smith</h3>
+            <div class="item">
+                <div class="case-studies-card">
+                    <img src="vl-studies-2.2.webp" alt="Case Study 2">
+                    <h3>Jane Smith</h3>
+                </div>
             </div>
-            <div class="case-studies-card">
-                <img src="vl-studies-2.3.webp" alt="Case Study 3">
-                <h3>Emily Johnson</h3>
+            <div class="item">
+                <div class="case-studies-card">
+                    <img src="vl-studies-2.3.webp" alt="Case Study 3">
+                    <h3>Emily Johnson</h3>
+                </div>
             </div>
-             <div class="case-studies-card">
-                <img src="vl-studies-2.2.webp" alt="Case Study 4">
-                <h3>Emily Johnson</h3>
+            <div class="item">
+                <div class="case-studies-card">
+                    <img src="vl-studies-2.2.webp" alt="Case Study 4">
+                    <h3>Emily Johnson</h3>
+                </div>
             </div>
-
-        </div>
-            <button class="slide-btn right">&#8594;</button>
         </div>
     </div>
 </section>
+
 <section id="HomepageV">
     <div class="testimonials-container">
-        
         <div class="testimonials-left">
-            <h4 class="testimonials-tag">TESTIMONIALS</h4>
-            <h2 class="testimonials-title">Our Success is Measured by Our Satisfaction</h2>
+            <h4 class="testimonials-tag">TESTIMONIAL</h4>
+            <h2 class="testimonials-title">Our Success is Measured by Are Satisfaction</h2>
             <p class="testimonials-desc">Their success is the greatest reflection of our commitment to excellence.</p>
             <div class="testimonials-btn-wrapper">
-                <button class="btn">Read More Reviews <span>&#8599;</span></button>
+                <button class="btn">READ MORE REVIEWS <span>&#8599;</span></button>
             </div>
         </div>
         
         <div class="testimonials-right">
-            <div class="testimonials-cards">
-                
-                <div class="testimonials-card">
-                    <img src="vl-testimonial-3.1.webp" alt="Testimonial 1">
-                    <h3>John Doe</h3>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+            <div id="testimonials-carousel" class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="testimonials-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Their feedback fuel our passion for continuous improvement and The innovation. We take immense pride in the relationships we’ve built and the trust we’ve earned through."</p>
+                        <div class="testimonial-footer">
+                            <div class="user-info">
+                                <img src="vl-testimonial-1.1.webp" alt="Ben Stokes">
+                                <div class="user-details">
+                                    <h3>Ben Stokes</h3>
+                                    <span>Developers</span>
+                                </div>
+                            </div>
+                            <img src="vl-testimonial-q2.svg" alt="Quote" class="quote-icon">
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="testimonials-card">
-                    <img src="vl-testimonial-3.2.webp" alt="Testimonial 2">
-                    <h3>Jane Smith</h3>
-                    <p>"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+                <div class="item">
+                    <div class="testimonials-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Their feedback fuel our passion for continuous improvement and The innovation. We take immense pride in the relationships we’ve built and the trust we’ve earned through."</p>
+                        <div class="testimonial-footer">
+                            <div class="user-info">
+                                <img src="vl-testimonial-1.2.webp" alt="Jane Smith">
+                                <div class="user-details">
+                                    <h3>Ben Stokes</h3>
+                                    <span>Developers</span>
+                                </div>
+                            </div>
+                            <img src="vl-testimonial-q2.svg" alt="Quote" class="quote-icon">
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="testimonials-card">
-                    <img src="vl-testimonial-3.3.webp" alt="Testimonial 3">
-                    <h3>Emily Johnson</h3>
-                    <p>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
+                <div class="item">
+                    <div class="testimonials-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Their feedback fuel our passion for continuous improvement and The innovation. We take immense pride in the relationships we’ve built and the trust we’ve earned through."</p>
+                        <div class="testimonial-footer">
+                            <div class="user-info">
+                                <img src="vl-testimonial-1.1.webp" alt="Emily Johnson">
+                                <div class="user-details">
+                                    <h3>Emily Johnson</h3>
+                                    <span>Developers</span>
+                                </div>
+                            </div>
+                            <img src="vl-testimonial-q2.svg" alt="Quote" class="quote-icon">
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </section>
 
@@ -219,7 +282,7 @@
         <div class="pricing-tag">
             <h4>OUR PRICING</h4>
         </div>
-        <h2 class="pricing-title">Technology Solutions Within Your Budget</h2>
+        <h2 class="pricing-title">Technology Solutions <br>Within Your Budget</h2>
 
         <div class="pricing-cards">
             <div class="pricing-card">
@@ -252,7 +315,7 @@
                         <li>Great Customer Support</li>
                         <li>Market Growth Solution</li>
                         <li>Digital Product Design</li>
-                        </ul>
+                    </ul>
                     <button class="btn">choose a plan <span>&#8599;</span></button>
                 </div>
             </div>
@@ -277,21 +340,157 @@
     </div>
 </section>
 
+<section id="HomepageVII">
+    <div class="team-container">
+        <div class="team-header-wrapper">
+            <h4 class="team-tag">OUR TEAM</h4>
+            <h2 class="team-title">Dedicated Professionals,<br>Proven Results</h2>
+        </div>
+        
+        <div id="team-carousel" class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="team-card">
+                    <img src="vl-team-4.1.webp" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <span>CEO</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="team-card">
+                    <img src="vl-team-4.2.webp" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <span>CTO</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="team-card">
+                    <img src="vl-team-4.3.webp" alt="Team Member 3">
+                    <h3>Emily Johnson</h3>
+                    <span>Lead Developer</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="team-card">
+                    <img src="vl-team-4.4.webp" alt="Team Member 4">
+                    <h3>Michael Brown</h3>
+                    <span>Project Manager</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<div class="owl-carousel owl-theme">
-    <div class="item"><h4>1</h4></div>
-    <div class="item"><h4>2</h4></div>
-    <div class="item"><h4>3</h4></div>
-    <div class="item"><h4>4</h4></div>
-    <div class="item"><h4>5</h4></div>
-    <div class="item"><h4>6</h4></div>
-    <div class="item"><h4>7</h4></div>
-    <div class="item"><h4>8</h4></div>
-    <div class="item"><h4>9</h4></div>
-    <div class="item"><h4>10</h4></div>
-    <div class="item"><h4>11</h4></div>
-    <div class="item"><h4>12</h4></div>
-</div>
+<section id="HomepageVIII">
+    <div class="blog-container">
+        <h4 class="blog-tag">OUR BLOG</h4>
+        <h2 class="blog-title ">Latest Insights & Updates</h2>
+        <div class="blog-cards">
+            <div class="blog-card">
+                <img class="blog-image" src="vl-blog-4.1.webp" alt="Blog Post 1">
+                <div class ="content-card">
+                    <div class="blog-detail">
+                        <span><img src="vl-calender-3.1.svg" alt="Blog Post 1"> January 15, 2024</span>
+                        <span> <img src="vl-user-3.2.svg" alt="Author"> John Doe</span>
+                    </div>
+                    <h3>How to Choose the Right IT Solutions for Your Business</h3>
+                    <p>Discover essential tips and strategies for selecting the perfect IT solutions to drive your business forward in the digital age.</p>
+                    <a href="#">Read More <span>&#8599;</span></a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img class="blog-image" src="vl-blog-4.2.webp" alt="Blog Post 2">
+                <div class ="content-card"> 
+                    <div class="blog-detail">
+                        <span><img src="vl-calender-3.1.svg" alt="Blog Post 2"> February 10, 2024</span>       
+                        <span> <img src="vl-user-3.2.svg" alt="Author"> Jane Smith</span>
+                    </div>
+                    <h3>Top 5 Cybersecurity Trends to Watch in 2024</h3>
+                    <p>Stay ahead of the curve with our comprehensive guide to the top cybersecurity trends shaping the industry in 2024.</p>
+                    <a href="#">Read More <span>&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="HomepageIX">
+    <div class="banner-container">
+        <div class="banner-left">
+            <h2 class="banner-heading">Transform Your Business <br>Contact Us Today</h2>
+            <div class="subscribe-input-container">
+                <input type="email" placeholder="Email Address">
+                <button class="subscribe-btn">SUBSCRIBE NOW <span>&#8599;</span></button>
+            </div>
+        </div>
+
+        <div class="banner-right">
+            <img class="banner-decor" src="vl-cta-shape-4.1.svg" alt="Decorative Image">
+            <img class="banner-image" src="vl-cta-main-4.1.webp" alt="Banner Image">
+        </div>
+    </div>
+</section>
+
+    
+
+  <footer class="site-footer">
+    
+    <div class="footer-col brand-col">
+    <div class="footer-logo">
+      <img src="./assets/vl-logo-1.webp" alt="" srcset="">
+    </div>
+      <p>We foster a culture of teamwork &
+      creative problem-solving to deliver
+      exceptional results for our clients.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col links-col">
+    <h3>Quick Links</h3>
+    <ul>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Our Service</a></li>
+      <li><a href="#">Case Study</a></li>
+      <li><a href="#">Testimonial</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col links-col">
+    <h3>Our Service</h3>
+    <ul>
+      <li><a href="#">Cyber Security</a></li>
+      <li><a href="#">Network Analysis</a></li>
+      <li><a href="#">Data Recovery</a></li>
+      <li><a href="#">It Service</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col insta-col">
+    <h3>Instagram Post</h3>
+    <div class="insta-grid">
+      <div class="insta-item"><img src="./assets/ins-1.webp" alt="Post 1"></div>
+      <div class="insta-item"><img src="./assets/ins-2.webp" alt="Post 2"></div>
+      <div class="insta-item"><img src="./assets/ins-3.webp" alt="Post 3"></div>
+      <div class="insta-item"><img src="./assets/ins-4.webp" alt="Post 4"></div>
+      <div class="insta-item"><img src="./assets/ins-5.webp" alt="Post 5"></div>
+      <div class="insta-item"><img src="./assets/ins-6.webp" alt="Post 6"></div>
+    </div>
+  </div>
+</footer>
+
+
+<footer class="bottom-footer">
+  <div class="bottom-footer-container">
+    <p>Copyright ©2024 O-Tech. All Rights Reserved</p>
+    <span>Terms & Conditions  |  Privacy Policy</span>
+  </div>
+</footer>
+
+
+
 
 
 </body>

@@ -1,0 +1,938 @@
+/* ==========================================================================
+   PAGES.CSS — Shared stylesheet for About, Services, Contact inner pages
+   Built from home.css, stripped of home-only offsets, fixed for inner pages
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Figtree', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* ==========================================================================
+   NAVBAR (Fixed, same as home)
+   ========================================================================== */
+#HomepageI {
+    background-color: #4925d0;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    padding: 20px 100px;
+    z-index: 1000;
+    font-size: 18px;
+    width: 100%;
+    color: #ffffff;
+    background-color: rgb(68, 25, 197);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    padding: 0 75px 0 75px;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: opacity 0.2s ease;
+}
+
+.nav-links li a:hover {
+    opacity: 0.8;
+}
+
+.nav-links li a.active {
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 2px;
+}
+
+.nav-btn {
+    background-color: #ffffff;
+    color: #2e0797;
+    border: none;
+    padding: 8px 8px 8px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   HERO / BREADCRUMB — Inner page version (not full 100vh)
+   ========================================================================== */
+.hero-container {
+    background-color: #4925d0;
+    min-height: 320px;
+    padding-top: 80px; /* offset fixed navbar */
+    display: flex;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.hero-left .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero-right .hero-img-container {
+    position: relative;
+    overflow: visible;
+}
+
+/* ==========================================================================
+   SHARED UTILITY — .btn, .tag, .title, p
+   ========================================================================== */
+.btn {
+    background-color: #2e0797;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0effd;
+    color: #2e0797;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tag {
+    display: inline-block;
+    border: 1px solid rgba(46, 7, 151, 0.2);
+    background-color: rgba(46, 7, 151, 0.1);
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    color: #2e0797;
+}
+
+.title {
+    padding: 16px 0 20px;
+    font-size: 44px;
+    color: #111112;
+}
+
+/* Scoped paragraph style — does NOT override Tailwind's p inside tailwind sections */
+.hero-content p,
+.hero-content a {
+    font-size: 18px;
+    line-height: 28px;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   SERVICE SECTION (from HomepageIII — no extra margin-top for inner pages)
+   ========================================================================== */
+.service-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f5f8;
+    padding: 80px 50px;
+    /* NOTE: home.css has margin-top: 320px here for the about section offset.
+       Inner pages don't need that — intentionally omitted. */
+}
+
+.service-tag {
+    display: inline-block;
+    border: 1px solid rgba(46, 7, 151, 0.2);
+    background-color: rgba(46, 7, 151, 0.1);
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    color: #2e0797;
+}
+
+.service-tag h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.service-title {
+    padding-top: 16px;
+    font-size: 44px;
+    color: #111112;
+    text-align: center;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 10px;
+    border: solid 1px rgba(46, 7, 151, 0.2);
+    width: 350px;
+    min-height: 350px;
+    padding: 25px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+
+
+.service-card .service-icon{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    background-color: #EEEDFB;
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card .service-icon:hover{
+    transform: scalex(-1);
+}
+
+.service-card h3 {
+    font-size: 20px;
+    color: #111112;
+    font-weight: 600;
+}
+
+.service-card p {
+    font-size: 15px;
+    line-height: 24px;
+    color: #525057;
+}
+
+.service-card a {
+    color: #2e0797;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.service-card a span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #2e0797;
+    width: auto;
+    height: auto;
+    margin-left: 6px;
+    font-size: 14px;
+}
+
+.service-card:hover {
+    background-color: #4925d0;
+    cursor: pointer;
+}
+
+.service-card:hover h3,
+.service-card:hover p,
+.service-card:hover a,
+.service-card:hover a span {
+    color: #ffffff !important;
+}
+
+.service-card:hover .service-icon {
+    background-color: #ffffff !important;
+}
+
+/* ==========================================================================
+   TEAM SECTION (HomepageVII)
+   ========================================================================== */
+.team-container {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 50px;
+    background-color: #f4f5f8;
+}
+
+.team-header-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.team-tag {
+    display: inline-block;
+    border: 1px solid rgba(46, 7, 151, 0.2);
+    background-color: rgba(46, 7, 151, 0.1);
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: #2e0797;
+    width: fit-content;
+}
+
+.team-tag h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.team-title {
+    font-size: 44px;
+    color: #111112;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0;
+}
+
+#team-carousel {
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.team-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.team-card img {
+    width: 100% !important;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: block;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    font-size: 22px;
+    color: #111112;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.team-card span {
+    color: #5e3bee;
+    font-weight: 500;
+    font-size: 15px;
+    display: inline-block;
+}
+
+/* Owl Carousel Dots — Team */
+#team-carousel .owl-dots {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#team-carousel .owl-dot span {
+    width: 10px;
+    height: 10px;
+    margin: 5px 7px;
+    background: #d6d6d6;
+    display: block;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+#team-carousel .owl-dot.active span {
+    background: #5e3bee;
+    width: 24px;
+}
+
+/* Testimonials Owl Dots */
+.owl-theme .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    margin: 5px 6px;
+    background: #D1D5DB;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: #6366F1;
+    box-shadow: 0 0 0 3px white, 0 0 0 5px #6366F1;
+}
+
+.owl-nav {
+    display: none;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* ==========================================================================
+   BOOTSTRAP PARTNERSHIP SECTION (Scoped)
+   ========================================================================== */
+.bootstrap-scope {
+    font-family: 'Figtree', sans-serif;
+    background-color: #f4f5f8;
+    display: block;
+    width: 100%;
+}
+
+.bootstrap-scope * {
+    box-sizing: border-box;
+}
+
+.bootstrap-scope .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -12px;
+    margin-left: -12px;
+}
+
+.bootstrap-scope .row > * {
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+.bootstrap-scope .partnership-section {
+    padding-top: 80px;
+    padding-bottom: 140px;
+    position: relative;
+}
+
+.bootstrap-scope .custom-layout-container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+}
+
+.bootstrap-scope .image-cluster {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.bootstrap-scope .tall-img {
+    width: 60%;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.bootstrap-scope .short-img {
+    width: 40%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.bootstrap-scope .content-right-block {
+    max-width: 400px;
+    margin-bottom: 120px;
+}
+
+.bootstrap-scope .floating-stats-card {
+    position: absolute;
+    bottom: 87px;
+    left: 36.5%;
+    width: 63.5%;
+    background: #ffffff;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    z-index: 10;
+}
+
+.bootstrap-scope .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.1;
+}
+
+.bootstrap-scope .stat-label {
+    font-size: 0.85rem;
+    color: #666666;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   CTA BANNER (HomepageIX)
+   ========================================================================== */
+#HomepageIX {
+    margin: 100px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.banner-container {
+    background-color: #4925d0;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    width: 100%;
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    z-index: 3;
+    flex: 1.3;
+}
+
+.banner-heading {
+    font-size: 38px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.subscribe-input-container {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 50px;
+    padding: 6px 6px 6px 24px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.subscribe-input-container input {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #525057;
+    flex: 1;
+    background: transparent;
+}
+
+.subscribe-btn {
+    background-color: #5e3bee;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.subscribe-btn:hover {
+    background-color: #2e0797;
+}
+
+.subscribe-btn span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #5e3bee;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.banner-right {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.banner-image {
+    height: 110%;
+    width: auto;
+    object-fit: contain;
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+    z-index: 2;
+}
+
+.banner-decor {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 45px;
+    z-index: 1;
+    animation: vlbounce 4s ease-in-out infinite;
+}
+
+@keyframes vlbounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-20px); }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+    background-color: #F6F6F9;
+    width: 100%;
+    padding: 60px 10% 4rem 10%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    box-sizing: border-box;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.brand-col p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #2E0797;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #2E0797;
+    color: #fff;
+}
+
+.footer-col h3 {
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.links-col ul li a {
+    color: rgba(22, 22, 22, 0.7);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.links-col ul li a:hover {
+    color: #726EFC;
+}
+
+.insta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    max-width: 240px;
+}
+
+.insta-item {
+    aspect-ratio: 1 / 1;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #222;
+}
+
+.insta-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.bottom-footer {
+    background-color: #F6F6F9;
+    border-top: 1px solid #DDDEE1;
+    width: 100%;
+    padding: 24px 0;
+}
+
+.bottom-footer-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.bottom-footer p,
+.bottom-footer span {
+    font-size: 14px;
+    color: #525057;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 16px 40px;
+    }
+    .nav-links {
+        padding: 0 20px;
+        gap: 20px;
+    }
+    .hero-left {
+        margin-left: 40px;
+    }
+    .team-container {
+        padding: 70px 30px;
+    }
+    .team-title {
+        font-size: 34px;
+    }
+    .site-footer {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 60px 5% 4rem 5%;
+    }
+    .footer-col.brand-col {
+        grid-column: span 2;
+    }
+    .footer-col.insta-col {
+        grid-column: span 2;
+    }
+    .insta-grid {
+        max-width: 100%;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .bootstrap-scope .floating-stats-card {
+        position: relative !important;
+        left: 0 !important;
+        width: 100% !important;
+        margin-top: 40px;
+        bottom: 0 !important;
+    }
+    .bootstrap-scope .content-right-block {
+        margin-bottom: 0;
+        max-width: 100%;
+    }
+    .bootstrap-scope .tall-img  { height: 380px; }
+    .bootstrap-scope .short-img { height: 260px; }
+    .bootstrap-scope .partnership-section { padding-bottom: 60px; }
+    #HomepageIX {
+        padding: 0 20px;
+        margin: 60px auto;
+    }
+    .banner-container {
+        flex-direction: column;
+        height: auto;
+        padding: 50px 30px 0 30px;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+    }
+    .banner-left {
+        flex: unset;
+        width: 100%;
+        align-items: center;
+    }
+    .banner-heading { font-size: 26px; text-align: center; }
+    .subscribe-input-container { max-width: 100%; width: 100%; }
+    .banner-right {
+        position: relative;
+        flex: unset;
+        width: 100%;
+        height: 220px;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .banner-image { position: relative; height: 220px; width: auto; bottom: auto; right: auto; }
+    .banner-decor { display: none; }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+    .nav-links {
+        display: none; /* mobile: hide links, show hamburger if added later */
+    }
+    .hero-left {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+    .hero-right {
+        display: none; /* hide breadcrumb image on mobile */
+    }
+    .team-container { padding: 50px 20px; }
+    .team-title { font-size: 26px; }
+    .service-container { padding: 50px 20px; }
+    .service-title { font-size: 30px; }
+    .service-cards { margin: 20px; }
+    .site-footer {
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 40px;
+    }
+    .bottom-footer-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        width: 90%;
+    }
+    .banner-container { padding: 36px 20px 0 20px; }
+    .banner-heading { font-size: 22px; }
+    .banner-right { height: 180px; }
+    .banner-image { height: 180px; }
+    h1, h2, h3, h4 { word-break: break-word; overflow-wrap: break-word; }
+}
+
+@media (max-width: 480px) {
+    .navbar { padding: 12px 16px; }
+    .team-container { padding: 40px 16px; }
+    .team-title { font-size: 22px; }
+    .team-card h3 { font-size: 18px; }
+    .site-footer {
+        grid-template-columns: 1fr;
+        padding: 40px 5% 3rem 5%;
+    }
+    .footer-col.brand-col,
+    .footer-col.insta-col,
+    .footer-col.links-col {
+        grid-column: span 1;
+    }
+    .insta-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 220px;
+    }
+    #HomepageIX { padding: 0 12px; margin: 40px auto; }
+    .subscribe-input-container {
+        flex-direction: column;
+        border-radius: 12px;
+        padding: 10px;
+        gap: 8px;
+        align-items: stretch;
+    }
+    .subscribe-btn { justify-content: center; border-radius: 8px; width: 100%; padding: 12px; }
+    .banner-right { height: 150px; }
+    .banner-image { height: 150px; }
+}
+
+/* ==========================================================================
+   MARQUEE ANIMATION (used in About page brand strip)
+   ========================================================================== */
+@keyframes marquee {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    animation: marquee 25s linear infinite;
+}
+
+/* ==========================================================================
+   CONTACT PAGE SPECIFIC
+   ========================================================================== */
+.contact-form-section input,
+.contact-form-section textarea {
+    font-family: 'Figtree', sans-serif;
+}

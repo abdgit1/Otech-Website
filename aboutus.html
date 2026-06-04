@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Otech</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Bootstrap (loaded before our CSS so our rules win the cascade) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Our shared pages stylesheet (overrides Bootstrap where needed) -->
+    <link rel="stylesheet" href="pages.css" />
+
+    <!-- Tailwind CDN (v3 — compatible with arbitrary values) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            /* Tell Tailwind NOT to preflight (reset) since Bootstrap already did it,
+               and our pages.css has what we need) */
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: { icon: 'rgb(94, 37, 216)' },
+                    keyframes: {
+                        marquee: {
+                            '0%':   { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        }
+                    },
+                    animation: {
+                        'marquee-scroll': 'marquee 25s linear infinite'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Undo Bootstrap's body reset so our pages.css navbar/hero render correctly */
+        body { background-color: #ffffff; margin: 0; padding: 0; overflow-x: hidden; }
+
+        /* Arrow filter on hover for work process section */
+        .group:hover .group-hover\:filter-purple {
+            filter: invert(27%) sepia(85%) saturate(2106%) hue-rotate(236deg) brightness(87%) contrast(93%);
+        }
+
+        /* Owl carousel nav arrows hidden globally */
+        .owl-nav { display: none !important; }
+    </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR + HERO (HomepageI)
+     ============================================================ -->
+<section id="HomepageI">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="vl-logo-1.1.webp" alt="Otech Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html" class="active">About</a></li>
+            <li><a href="servicepage.html">Services</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav-btn">Get Started <span>&#8599;</span></button>
+    </nav>
+
+    <div class="hero-container">
+        <div class="hero-left">
+            <div class="hero-content">
+                <h1 style="color:#ffffff; font-size:60px; font-weight:700; margin:0;">About Us</h1>
+                <span>
+                    <a href="home.html" style="color:#ffffff; font-size:20px; text-decoration:none;">Home</a>
+                    <span style="color:#ffffff; font-size:20px; margin:0 8px;">&gt;</span>
+                    <a href="aboutus.html" style="color:#ffffff; font-size:20px; text-decoration:none;">About</a>
+                </span>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-img-container">
+                <img src="vl-breadcrumb-1.webp" alt="About Us">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 1: ABOUT US INTRO
+     ============================================================ -->
+  <section class="py-16 bg-gray-50">
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-10"
+      >
+        <!-- LEFT SECTION -->
+        <div class="lg:w-1/2 w-full flex justify-center relative">
+          <div
+            class="w-[280px] sm:w-[350px] h-[350px] sm:h-[450px] rounded-t-full overflow-hidden border-8 border-blue-700"
+          >
+            <img
+              src="https://html.vikinglab.agency/otech/assets/img/about/vl-about-1.1.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="absolute -bottom-10 right-1/2 translate-x-1/2 lg:right-10 lg:translate-x-0 w-50 h-50 rounded-full overflow-hidden border-8 border-blue-700"
+          >
+            <img
+              src="https://html.vikinglab.agency/otech/assets/img/about/vl-about-1.2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- RIGHT SECTION -->
+        <div class="lg:w-1/2">
+          <span
+            class="bg-gray-100 text-blue-700 px-4 py-1 rounded-full text-1xl font-medium"
+          >
+            ABOUT US
+          </span>
+
+          <h2 class="text-3xl lg:text-4xl font-semibold mt-4 leading-snug">
+            Empower Your Business <br />
+            Every Step of the Way
+          </h2>
+
+          <p class="text-gray-700 font-medium leading-normal mt-3">
+            Whether it optimizing IT infrastructure, enhancing cybersecurity,
+            or driving digital transformation, we are committed to helping.
+          </p>
+
+          <div class="mt-6 bg-white p-5 rounded-xl flex gap-4 items-start">
+            <div
+              class="w-5 h-5 rounded-full bg-purple-600 flex items-center justify-center text-white"
+            >
+              <span>
+                <i class="fa-solid fa-circle-check"></i>
+              </span>
+            </div>
+
+            <div>
+              <h4 class="font-semibold text-lg">Strategic Planning</h4>
+              <p class="text-gray-600 text-sm mt-1 font-medium">
+                We specialize in delivering tailored IT solutions empower
+                businesses to thrive in the digital era.
+              </p>
+            </div>
+          </div>
+
+          <button
+            class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-black transition duration-300 ease-in-out"
+          >
+            LEARN MORE
+            <span>
+              <i class="fa-solid fa-arrow-trend-up"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="flex flex-col lg:flex-row gap-6 w-full p-4 lg:p-6 justify-center items-center"
+    >
+      <div class="w-full lg:w-1/3 min-w-0 p-2 lg:p-4">
+        <div class="owl-carousel about-carousel owl-theme">
+          <div class="item bg-gray-50 p-4 md:p-6 rounded-xl">
+            <h4 class="text-xl md:text-2xl font-bold mb-3">Our Mission</h4>
+            <p class="text-sm md:text-base text-gray-600">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              ratione aperiam pariatur. Accusamus voluptate eius dignissimos
+              tempore cum dolor sit esse ipsa placeat quia, alias vel ipsum?
+              Ex, commodi quod!Lorem ipsum dolor sit amet consectetur
+              adipisicing elit.
+            </p>
+          </div>
+
+          <div class="item bg-gray-50 p-6">
+            <h4 class="text-xl md:text-2xl font-bold mb-3">Our Vision</h4>
+            <p class="text-sm md:text-base text-gray-600">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
+              nesciunt obcaecati tenetur corporis officiis dolore, illum autem
+              optio quas aliquid illo ducimus nam! Expedita iste in amet
+              similique error eveniet.Lorem ipsum dolor sit amet consectetur
+              adipisicing elit.
+            </p>
+          </div>
+
+          <div class="item bg-gray-50 p-6">
+            <h4 class="text-xl md:text-2xl font-bold mb-3">Our Values</h4>
+            <p class="text-sm md:text-base text-gray-600">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+              autem corporis nemo porro ex quod soluta ipsam, aspernatur veniam
+              vitae minus voluptates! Modi pariatur earum animi voluptate hic
+              nam quia.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full lg:w-1/2 p-2 lg:p-4">
+        <div class="relative">
+          <img
+            src="https://html.vikinglab.agency/otech/assets/img/about/vl-video-img.png"
+            alt="about"
+            class="w-full h-auto object-cover brightness-50 rounded-xl"
+          />
+
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          >
+            <a
+              href="https://www.youtube.com/watch?v=lCxcTsOHrjo"
+              target="_blank"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+            >
+              <div
+                class="w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center animate-pulse"
+                style="background: rgba(94, 37, 216, 0.25)"
+              >
+                <div
+                  class="w-14 h-14 md:w-20 md:h-20 bg-icon rounded-full flex items-center justify-center"
+                >
+                  <i
+                    class="fa-solid fa-play text-white text-xl md:text-3xl"
+                  ></i>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- ============================================================
+     SECTION 3: WHY CHOOSE US (Bootstrap Partnership Section)
+     ============================================================ -->
+<div class="bootstrap-scope">
+    <section class="partnership-section">
+        <div class="custom-layout-container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <span class="badge mb-3 px-3 py-2 text-uppercase fw-bold"
+                          style="background-color:#ede9fe; color:#5046e5; border-radius:30px; font-size:1rem; letter-spacing:0.5px; display:inline-block;">
+                        Why Choose Us
+                    </span>
+                    <h2 class="fw-bold text-dark mb-0"
+                        style="font-size:2.5rem; line-height:1.3; letter-spacing:-0.5px; font-family:'Figtree',sans-serif;">
+                        We Don't Just Deliver Solutions<br>We Build Partnerships
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row align-items-start justify-content-between">
+                <div class="col-lg-8 pe-lg-4 mb-4 mb-lg-0">
+                    <div class="image-cluster">
+                        <img src="vl-about-choose-1.webp" class="tall-img" alt="Workspace Team">
+                        <img src="vl-about-choose-2.webp" class="short-img" alt="Mobile Analysis">
+                    </div>
+                </div>
+                <div class="col-lg-4 ps-lg-4">
+                    <div class="content-right-block">
+                        <p style="line-height:28px; font-size:18px; color:#5f6168; font-family:'Figtree',sans-serif;">
+                            We understand that every business is unique, which is why we offer customized IT solutions
+                            that fit your needs perfectly. Our approach is rooted in collaboration and innovation.
+                        </p>
+                        <a href="#" class="btn rounded-pill px-4 py-2 fw-bold d-inline-flex align-items-center gap-2 text-white mt-4"
+                           style="background-color:#5046e5; font-size:1rem; letter-spacing:0.5px; box-shadow:0 4px 14px rgba(80,70,229,0.25); text-decoration:none;">
+                            LEARN MORE
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Card -->
+            <div class="floating-stats-card p-4">
+                <div class="row text-center py-2 g-0">
+                    <div class="col-6 col-md-3 border-end border-light-subtle py-3">
+                        <div class="stat-number"><span class="counter" data-target="90">0</span>k</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="col-6 col-md-3 border-end border-light-subtle py-3">
+                        <div class="stat-number"><span class="counter" data-target="650">0</span>+</div>
+                        <div class="stat-label">Total Projects</div>
+                    </div>
+                    <div class="col-6 col-md-3 border-end border-light-subtle py-3">
+                        <div class="stat-number"><span class="counter" data-target="85">0</span>+</div>
+                        <div class="stat-label">Work Together</div>
+                    </div>
+                    <div class="col-6 col-md-3 py-3">
+                        <div class="stat-number"><span class="counter" data-target="12">0</span>+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- ============================================================
+     SECTION 4: WORK PROCESS (BOOTSTRAP CONFLICT RESOLVED)
+     ============================================================ -->
+<section class="relative z-10 pt-24 pb-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h4 class="text-sm font-semibold tracking-wider text-purple-700 uppercase bg-purple-50 inline-block px-4 py-2 rounded-full">
+                Work Process
+            </h4>
+            <h2 class="text-4xl font-bold text-slate-900 mt-4">How We Get Things Done</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Step 01 -->
+            <div class="flex flex-col items-center text-center group">
+                <!-- Added ! to group-hover:bg-purple-700 to break Bootstrap's bg-white lock -->
+                <div class="relative flex items-center justify-center w-24 h-24 bg-white rounded-full shadow-md transition-all duration-300 group-hover:scale-105 group-hover:!bg-purple-700">
+                    <img src="images/vl-work-3.1.svg" alt="Discovery" class="w-12 h-12 object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert" />
+                    
+                    <!-- Added ! to group-hover:bg-white to override Bootstrap's bg-black lock -->
+                    <div class="absolute -top-1 -right-1 w-7 h-7 bg-black rounded-full flex items-center justify-center shadow-sm transition-colors duration-300 group-hover:!bg-white">
+                        <!-- Added ! to group-hover:text-purple-700 to override Bootstrap's text-white lock -->
+                        <cite class="not-italic text-xs font-bold text-white transition-colors duration-300 group-hover:!text-purple-700">01</cite>
+                    </div>
+                    <div class="hidden lg:flex absolute top-1/2 left-[105%] -translate-y-1/2 w-10 items-center justify-center z-20 pointer-events-none">
+                        <img src="images/arrow-right.svg" alt="" class="w-full h-auto transition-all duration-300 group-hover:filter-purple" />
+                    </div>
+                </div>
+                <div class="pt-8">
+                    <h3 class="text-xl font-semibold text-slate-900 pb-3 transition-colors duration-200 group-hover:!text-purple-700">
+                        Discovery & Planning
+                    </h3>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-[220px] mx-auto">
+                        We begin by understanding your business needs, challenges, and goals through in-depth consultation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="flex flex-col items-center text-center group">
+                <div class="relative flex items-center justify-center w-24 h-24 bg-white rounded-full shadow-md transition-all duration-300 group-hover:scale-105 group-hover:!bg-purple-700">
+                    <img src="images/vl-work-3.2.svg" alt="Design" class="w-12 h-12 object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert" />
+                    
+                    <div class="absolute -top-1 -right-1 w-7 h-7 bg-black rounded-full flex items-center justify-center shadow-sm transition-colors duration-300 group-hover:!bg-white">
+                        <cite class="not-italic text-xs font-bold text-white transition-colors duration-300 group-hover:!text-purple-700">02</cite>
+                    </div>
+                    <div class="hidden lg:flex absolute top-1/2 left-[105%] -translate-y-1/2 w-10 items-center justify-center z-20 pointer-events-none">
+                        <img src="images/arrow-right.svg" alt="" class="w-full h-auto transition-all duration-300 group-hover:filter-purple" />
+                    </div>
+                </div>
+                <div class="pt-8">
+                    <h3 class="text-xl font-semibold text-slate-900 pb-3 transition-colors duration-200 group-hover:!text-purple-700">
+                        Design & Development
+                    </h3>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-[220px] mx-auto">
+                        Our experts move into design and development with a clear plan and proven methodology.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="flex flex-col items-center text-center group">
+                <div class="relative flex items-center justify-center w-24 h-24 bg-white rounded-full shadow-md transition-all duration-300 group-hover:scale-105 group-hover:!bg-purple-700">
+                    <img src="images/vl-work-3.3.svg" alt="Improvement" class="w-12 h-12 object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert" />
+                    
+                    <div class="absolute -top-1 -right-1 w-7 h-7 bg-black rounded-full flex items-center justify-center shadow-sm transition-colors duration-300 group-hover:!bg-white">
+                        <cite class="not-italic text-xs font-bold text-white transition-colors duration-300 group-hover:!text-purple-700">03</cite>
+                    </div>
+                    <div class="hidden lg:flex absolute top-1/2 left-[105%] -translate-y-1/2 w-10 items-center justify-center z-20 pointer-events-none">
+                        <img src="images/arrow-right.svg" alt="" class="w-full h-auto transition-all duration-300 group-hover:filter-purple" />
+                    </div>
+                </div>
+                <div class="pt-8">
+                    <h3 class="text-xl font-semibold text-slate-900 pb-3 transition-colors duration-200 group-hover:!text-purple-700">
+                        Continuous Improvement
+                    </h3>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-[220px] mx-auto">
+                        We continuously monitor and refine solutions to keep you ahead in a fast-changing digital world.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="flex flex-col items-center text-center group">
+                <div class="relative flex items-center justify-center w-24 h-24 bg-white rounded-full shadow-md transition-all duration-300 group-hover:scale-105 group-hover:!bg-purple-700">
+                    <img src="images/vl-work-3.4.svg" alt="Launch" class="w-12 h-12 object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert" />
+                    
+                    <div class="absolute -top-1 -right-1 w-7 h-7 bg-black rounded-full flex items-center justify-center shadow-sm transition-colors duration-300 group-hover:!bg-white">
+                        <cite class="not-italic text-xs font-bold text-white transition-colors duration-300 group-hover:!text-purple-700">04</cite>
+                    </div>
+                </div>
+                <div class="pt-8">
+                    <h3 class="text-xl font-semibold text-slate-900 pb-3 transition-colors duration-200 group-hover:!text-purple-700">
+                        Launch & Support
+                    </h3>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-[220px] mx-auto">
+                        We launch your solution with comprehensive support — because our commitment doesn't end at delivery.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ============================================================
+     SECTION 5: TRUSTED BRANDS MARQUEE
+     ============================================================ -->
+<section class="bg-gradient-to-r from-blue-900 to-indigo-950 py-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center gap-8">
+            <div class="w-full lg:w-1/6 text-center lg:text-left flex-shrink-0">
+                <h4 class="text-xl font-bold text-white leading-tight">
+                    Trusted by<br class="hidden lg:inline"> Top Companies
+                </h4>
+            </div>
+            <div class="w-full lg:w-5/6 overflow-hidden relative">
+                <div class="flex flex-nowrap gap-16 items-center" style="width:200%; animation: marquee 25s linear infinite;">
+                    <div class="flex justify-around items-center gap-8 flex-shrink-0" style="width:50%;">
+                        <div class="w-36 opacity-70 hover:opacity-100 transition-opacity"><img src="images/vl-brand-1.1.webp" alt="" class="max-h-12 w-auto mx-auto object-contain" /></div>
+                        <div class="w-36 opacity-70 hover:opacity-100 transition-opacity"><img src="images/vl-brand-1.2.webp" alt="" class="max-h-12 w-auto mx-auto object-contain" /></div>
+                        <div class="w-36 opacity-70 hover:opacity-100 transition-opacity"><img src="images/vl-brand-1.3.webp" alt="" class="max-h-12 w-auto mx-auto object-contain" /></div>
+                        <div class="w-36 opacity-70 hover:opacity-100 transition-opacity"><img src="images/vl-brand-1.4.webp" alt="" class="max-h-12 w-auto mx-auto object-contain" /></div>
+                        <div class="w-36 opacity-70 hover:opacity-100 transition-opacity"><img src="images/vl-brand-1.5.webp" alt="" class="max-h-12 w-auto mx-auto object-contain" /></div>
+                    </div>
+                    <div class="flex justify-around items-center gap-8 flex-shrink-0" style="width:50%;" aria-hidden="true">
+                        <div class="w-36 opacity-70 hover:opacity-100 transition-opacity"><img src="images/vl-brand-1.1.webp" alt="" class="max-h-12 w-auto mx-auto object-contain" /></div>
+                        <div class="w-36 opacity-70 hover:opacity-100 transition-opacity"><img src="images/vl-brand-1.2.webp" alt="" class="max-h-12 w-auto mx-auto object-contain" /></div>
+                        <div class="w-36 opacity-70 hover:opacity-100 transition-opacity"><img src="images/vl-brand-1.3.webp" alt="" class="max-h-12 w-auto mx-auto object-contain" /></div>
+                        <div class="w-36 opacity-70 hover:opacity-100 transition-opacity"><img src="images/vl-brand-1.4.webp" alt="" class="max-h-12 w-auto mx-auto object-contain" /></div>
+                        <div class="w-36 opacity-70 hover:opacity-100 transition-opacity"><img src="images/vl-brand-1.5.webp" alt="" class="max-h-12 w-auto mx-auto object-contain" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 6: TEAM (uses pages.css classes + owl carousel from script.js)
+     ============================================================ -->
+<section id="HomepageVII">
+    <div class="team-container">
+        <div class="team-header-wrapper">
+            <div class="team-tag"><h4>OUR TEAM</h4></div>
+            <h2 class="team-title">Dedicated Professionals,<br>Proven Results</h2>
+        </div>
+        <div id="team-carousel" class="owl-carousel owl-theme">
+            <div class="item"><div class="team-card"><img src="vl-team-4.1.webp" alt="John Doe"><h3>John Doe</h3><span>CEO</span></div></div>
+            <div class="item"><div class="team-card"><img src="vl-team-4.2.webp" alt="Jane Smith"><h3>Jane Smith</h3><span>CTO</span></div></div>
+            <div class="item"><div class="team-card"><img src="vl-team-4.3.webp" alt="Emily Johnson"><h3>Emily Johnson</h3><span>Lead Developer</span></div></div>
+            <div class="item"><div class="team-card"><img src="vl-team-4.4.webp" alt="Michael Brown"><h3>Michael Brown</h3><span>Project Manager</span></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7: TESTIMONIALS
+     ============================================================ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <style>
+        .owl-theme .owl-dots .owl-dot span {
+            width: 10px;
+            height: 10px;
+            margin: 5px 6px;
+            background: #D1D5DB;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .owl-theme .owl-dots .owl-dot.active span,
+        .owl-theme .owl-dots .owl-dot:hover span {
+            background: #6366F1;
+            /* Indigo */
+            box-shadow: 0 0 0 3px white, 0 0 0 5px #6366F1;
+        }
+
+        .owl-nav {
+            display: none;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 py-16 font-sans overflow-x-hidden">
+
+    <section class="w-full relative mt-20">
+
+        <div class="text-center mb-12">
+            <span
+                class="inline-block bg-indigo-50 text-indigo-600 text-xs font-semibold tracking-wider uppercase px-4 py-1.5 rounded-full mb-3">
+                Testimonial
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                What Our Clients Say?
+            </h2>
+        </div>
+
+        <div class="relative carousel-wrapper">
+            <div class="owl-carousel owl-theme three-cards">
+
+                <div
+                    class="item bg-[#F4F5F9] p-6 rounded-lg w-[85vw] md:w-[856px] min-h-[280px] border border-gray-100 flex flex-col sm:flex-row gap-4 items-center sm:items-start text-left">
+                    <img src="images/tailwind-img.webp" alt="Donna Kiehn"
+                        class="w-24 h-32 md:w-28 min-h-[220px] mt-[20px] md:h-36 object-cover rounded-lg shadow-sm !w-auto shrink-0">
+                    <div class="flex-1 flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex ml-7 text-amber-400 text-xl mb-3 mt-[10px]">
+                                &#9733; &#9733; &#9733; &#9733; &#9733;
+                            </div>
+                            <p class="text-gray-600 ml-7 text-xs md:text-[20px] leading-relaxed mb-4 font-normal">
+                                “Our clients words speak volumes about impact of our services. We take pride in building
+                                strong best partnerships and delivering solutions that exceed expectations from seamless
+                                cloud migrations.”
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-end mt-[10px]">
+                            <div>
+                                <h4 class="font-bold ml-7 text-gray-900 text-lg">Donna Kiehn</h4>
+                                <p class="text-md ml-7 text-gray-500">Businessman</p>
+                            </div>
+                            <div class="flex items-center space-x-0.5 font-semibold tracking-tight text-sm">
+                                <img src="images/google.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="item bg-[#F4F5F9] p-6 rounded-lg w-[85vw] md:w-[856px] min-h-[280px] border border-gray-100 flex flex-col sm:flex-row gap-4 items-center sm:items-start text-left">
+                    <img src="images/tailwind-img.webp" alt="Donna Kiehn"
+                        class="w-24 h-32 md:w-28 min-h-[220px] mt-[20px] md:h-36 object-cover rounded-lg shadow-sm !w-auto shrink-0">
+                    <div class="flex-1 flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex ml-7 text-amber-400 text-xl mb-3 mt-[10px]">
+                                &#9733; &#9733; &#9733; &#9733; &#9733;
+                            </div>
+                            <p class="text-gray-600 ml-7 text-xs md:text-[20px] leading-relaxed mb-4 font-normal">
+                                “Our clients words speak volumes about impact of our services. We take pride in building
+                                strong best partnerships and delivering solutions that exceed expectations from seamless
+                                cloud migrations.”
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-end mt-[10px]">
+                            <div>
+                                <h4 class="font-bold ml-7 text-gray-900 text-lg">Donna Kiehn</h4>
+                                <p class="text-md ml-7 text-gray-500">Businessman</p>
+                            </div>
+                            <div class="flex items-center space-x-0.5 font-semibold tracking-tight text-sm">
+                                <img src="images/google.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="item bg-[#F4F5F9] p-6 rounded-lg w-[85vw] md:w-[856px] min-h-[280px] border border-gray-100 flex flex-col sm:flex-row gap-4 items-center sm:items-start text-left">
+                    <img src="images/tailwind-img.webp" alt="Donna Kiehn"
+                        class="w-24 h-32 md:w-28 min-h-[220px] mt-[20px] md:h-36 object-cover rounded-lg shadow-sm !w-auto shrink-0">
+                    <div class="flex-1 flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex ml-7 text-amber-400 text-xl mb-3 mt-[10px]">
+                                &#9733; &#9733; &#9733; &#9733; &#9733;
+                            </div>
+                            <p class="text-gray-600 ml-7 text-xs md:text-[20px] leading-relaxed mb-4 font-normal">
+                                “Our clients words speak volumes about impact of our services. We take pride in building
+                                strong best partnerships and delivering solutions that exceed expectations from seamless
+                                cloud migrations.”
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-end mt-[10px]">
+                            <div>
+                                <h4 class="font-bold ml-7 text-gray-900 text-lg">Donna Kiehn</h4>
+                                <p class="text-md ml-7 text-gray-500">Businessman</p>
+                            </div>
+                            <div class="flex items-center space-x-0.5 font-semibold tracking-tight text-sm">
+                                <img src="images/google.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="item bg-[#F4F5F9] p-6 rounded-lg w-[85vw] md:w-[856px] min-h-[280px] border border-gray-100 flex flex-col sm:flex-row gap-4 items-center sm:items-start text-left">
+                    <img src="images/tailwind-img.webp" alt="Donna Kiehn"
+                        class="w-24 h-32 md:w-28 min-h-[220px] mt-[20px] md:h-36 object-cover rounded-lg shadow-sm !w-auto shrink-0">
+                    <div class="flex-1 flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex ml-7 text-amber-400 text-xl mb-3 mt-[10px]">
+                                &#9733; &#9733; &#9733; &#9733; &#9733;
+                            </div>
+                            <p class="text-gray-600 ml-7 text-xs md:text-[20px] leading-relaxed mb-4 font-normal">
+                                “Our clients words speak volumes about impact of our services. We take pride in building
+                                strong best partnerships and delivering solutions that exceed expectations from seamless
+                                cloud migrations.”
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-end mt-[10px]">
+                            <div>
+                                <h4 class="font-bold ml-7 text-gray-900 text-lg">Donna Kiehn</h4>
+                                <p class="text-md ml-7 text-gray-500">Businessman</p>
+                            </div>
+                            <div class="flex items-center space-x-0.5 font-semibold tracking-tight text-sm">
+                                <img src="images/google.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+<!-- ============================================================
+     CTA BANNER (HomepageIX)
+     ============================================================ -->
+<section id="HomepageIX">
+    <div class="banner-container">
+        <div class="banner-left">
+            <h2 class="banner-heading">Transform Your Business<br>Contact Us Today</h2>
+            <div class="subscribe-input-container">
+                <input type="email" placeholder="Email Address">
+                <button class="subscribe-btn">SUBSCRIBE NOW <span>&#8599;</span></button>
+            </div>
+        </div>
+        <div class="banner-right">
+            <img class="banner-decor" src="vl-cta-shape-4.1.svg" alt="">
+            <img class="banner-image" src="vl-cta-main-4.1.webp" alt="Banner">
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+    <div class="footer-col brand-col">
+        <div class="footer-logo">
+            <img src="./assets/vl-logo-1.webp" alt="Otech">
+        </div>
+        <p>We foster a culture of teamwork & creative problem-solving to deliver exceptional results for our clients.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+    <div class="footer-col links-col">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="servicepage.html">Our Service</a></li>
+            <li><a href="#">Case Study</a></li>
+            <li><a href="#">Testimonial</a></li>
+        </ul>
+    </div>
+    <div class="footer-col links-col">
+        <h3>Our Services</h3>
+        <ul>
+            <li><a href="#">Cyber Security</a></li>
+            <li><a href="#">Network Analysis</a></li>
+            <li><a href="#">Data Recovery</a></li>
+            <li><a href="#">IT Service</a></li>
+        </ul>
+    </div>
+    <div class="footer-col insta-col">
+        <h3>Instagram</h3>
+        <div class="insta-grid">
+            <div class="insta-item"><img src="./assets/ins-1.webp" alt="Post 1"></div>
+            <div class="insta-item"><img src="./assets/ins-2.webp" alt="Post 2"></div>
+            <div class="insta-item"><img src="./assets/ins-3.webp" alt="Post 3"></div>
+            <div class="insta-item"><img src="./assets/ins-4.webp" alt="Post 4"></div>
+            <div class="insta-item"><img src="./assets/ins-5.webp" alt="Post 5"></div>
+            <div class="insta-item"><img src="./assets/ins-6.webp" alt="Post 6"></div>
+        </div>
+    </div>
+</footer>
+
+<footer class="bottom-footer">
+    <div class="bottom-footer-container">
+        <p>Copyright &copy;2024 O-Tech. All Rights Reserved</p>
+        <span>Terms &amp; Conditions &nbsp;|&nbsp; Privacy Policy</span>
+    </div>
+</footer>
+
+
+
+<!-- ============================================================
+     SCRIPTS — all at bottom of body
+     ============================================================ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+$(document).ready(function () {
+    // Mission/Vision/Values carousel
+    $(".about-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: false,
+        navText: [
+            '<div style="width:48px;height:48px;border:1px solid #d1d5db;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#fff;"><i class="fa-solid fa-arrow-left" style="font-size:18px;"></i></div>',
+            '<div style="width:48px;height:48px;border:1px solid #d1d5db;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#fff;"><i class="fa-solid fa-arrow-right" style="font-size:18px;"></i></div>'
+        ],
+        responsive: { 0: { items: 1 }, 600: { items: 1 }, 1025: { items: 1 } }
+    });
+
+    // Testimonials carousel
+    $(".three-cards").owlCarousel({
+        center: true,
+        autoWidth: true,
+        loop: true,
+        margin: 24,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        nav: false,
+        dots: true
+    });
+
+    // Counter animation
+    const counters = document.querySelectorAll(".counter");
+    counters.forEach(function(counter) {
+        const target = +counter.getAttribute("data-target");
+        const startTime = performance.now();
+        const duration = 1500;
+        function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = progress * (2 - progress);
+            counter.innerText = Math.floor(ease * target);
+            if (progress < 1) requestAnimationFrame(updateCounter);
+            else counter.innerText = target;
+        }
+        requestAnimationFrame(updateCounter);
+    });
+});
+</script>
+
+</body>
+</html>
