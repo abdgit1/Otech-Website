@@ -17,24 +17,32 @@ body {
 /* ==========================================================================
    NAVBAR (Fixed, same as home)
    ========================================================================== */
+/* 1. Prevent Margin Collapse and lock the background to the top */
+/* 1. Ensure the main container hugs the very top */
 #HomepageI {
     background-color: #4925d0;
     position: relative;
+    width: 100%;
 }
 
+/* 2. Floating Navbar (Identical to home.css) */
 .navbar {
     display: flex;
     justify-content: space-between;
     position: fixed;
-    top: 0;
+    top: 30px;
     align-items: center;
     padding: 20px 100px;
     z-index: 1000;
     font-size: 18px;
-    width: 100%;
+    width: calc(100% - 100px);
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
     color: #ffffff;
     background-color: rgb(68, 25, 197);
 }
+
 
 .nav-links {
     display: flex;
@@ -72,12 +80,19 @@ body {
 /* ==========================================================================
    HERO / BREADCRUMB — Inner page version (not full 100vh)
    ========================================================================== */
+
+/* 3. Shift from padding to margin to match the home page spacing */
+/* 3. The Core Fix: Use Padding, NOT Margin */
 .hero-container {
     background-color: #4925d0;
     min-height: 320px;
-    padding-top: 80px; /* offset fixed navbar */
+    /* This pushes the content down below the floating navbar, 
+       but keeps the purple background intact! */
+    padding-top: 140px; 
+    margin-top: 0; 
     display: flex;
 }
+
 
 .hero-left {
     flex: 1;
@@ -302,18 +317,9 @@ body {
     background-color: #f4f5f8;
 }
 
-.team-header-wrapper {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
 .team-tag {
     display: inline-block;
-    border: 1px solid rgba(46, 7, 151, 0.2);
+    border: 1px rgba(46, 7, 151, 0.2);
     background-color: rgba(46, 7, 151, 0.1);
     border-radius: 20px;
     padding: 5px 15px;
@@ -321,19 +327,10 @@ body {
     width: fit-content;
 }
 
-.team-tag h4 {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
 .team-title {
     font-size: 44px;
     color: #111112;
     line-height: 1.2;
-    font-weight: 700;
-    margin: 0;
 }
 
 #team-carousel {
@@ -347,13 +344,7 @@ body {
     padding: 25px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.team-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.02);
 }
 
 .team-card img {
@@ -362,68 +353,71 @@ body {
     border-radius: 8px;
     margin-bottom: 20px;
     display: block;
-    object-fit: cover;
 }
 
 .team-card h3 {
     font-size: 22px;
     color: #111112;
-    margin: 0 0 5px 0;
-    font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .team-card span {
     color: #5e3bee;
     font-weight: 500;
     font-size: 15px;
-    display: inline-block;
 }
 
-/* Owl Carousel Dots — Team */
-#team-carousel .owl-dots {
-    text-align: center;
-    margin-top: 30px;
-}
-
-#team-carousel .owl-dot span {
-    width: 10px;
-    height: 10px;
-    margin: 5px 7px;
-    background: #d6d6d6;
-    display: block;
-    border-radius: 30px;
-    transition: background 0.3s ease;
-}
-
-#team-carousel .owl-dot.active span {
-    background: #5e3bee;
-    width: 24px;
-}
-
-/* Testimonials Owl Dots */
-.owl-theme .owl-dots .owl-dot span {
-    width: 10px;
-    height: 10px;
-    margin: 5px 6px;
-    background: #D1D5DB;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
-    background: #6366F1;
-    box-shadow: 0 0 0 3px white, 0 0 0 5px #6366F1;
-}
-
-.owl-nav {
-    display: none;
-}
-
-.carousel-wrapper {
-    overflow: hidden;
+/* --- Team Header Row with Custom Nav --- */
+.team-header-wrapper {
+    max-width: 1200px;
     width: 100%;
+    margin: 0 auto 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
 }
+
+.team-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.team-custom-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+.team-prev-btn,
+.team-next-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(73, 37, 208, 0.12);
+    color: #111112;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.team-prev-btn:hover,
+.team-next-btn:hover {
+    background-color: rgba(73, 37, 208, 0.28);
+}
+
+#team-carousel .owl-nav {
+    display: none !important;
+}
+
 
 /* ==========================================================================
    BOOTSTRAP PARTNERSHIP SECTION (Scoped)

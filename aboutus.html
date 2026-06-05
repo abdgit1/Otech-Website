@@ -68,19 +68,21 @@
      NAVBAR + HERO (HomepageI)
      ============================================================ -->
 <section id="HomepageI">
-    <nav class="navbar">
+  <nav class="navbar">
         <div class="logo">
             <img src="vl-logo-1.1.webp" alt="Otech Logo">
         </div>
         <ul class="nav-links">
             <li><a href="home.html">Home</a></li>
-            <li><a href="aboutus.html" class="active">About</a></li>
+            <li><a href="aboutus.html">About</a></li>
             <li><a href="servicepage.html">Services</a></li>
-            <li><a href="#">Case Studies</a></li>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="contact.html">Contact</a></li>
+<li><a href="home.html#HomepageIV">Case Studies</a></li>
+<li><a href="home.html#HomepageVIII">Blogs</a></li>
+            <li><a href="#" >Pages</a></li>
         </ul>
-        <button class="nav-btn">Get Started <span>&#8599;</span></button>
+        <a href="contact.html" class="nav-btn" style="text-decoration: none;">
+    Get Started <span>&#8599;</span>
+</a>
     </nav>
 
     <div class="hero-container">
@@ -463,33 +465,54 @@
 <section id="HomepageVII">
     <div class="team-container">
         <div class="team-header-wrapper">
-            <div class="team-tag"><h4>OUR TEAM</h4></div>
-            <h2 class="team-title">Dedicated Professionals,<br>Proven Results</h2>
+            <div class="team-header-text">
+                <h4 class="team-tag">OUR TEAM</h4>
+                <h2 class="team-title">Dedicated Professionals,<br>Proven Results</h2>
+            </div>
+            <div class="team-custom-nav">
+                <button class="team-prev-btn"><i class="fa-solid fa-arrow-left-long"></i></button>
+                <button class="team-next-btn"><i class="fa-solid fa-arrow-right-long"></i></button>
+            </div>
         </div>
+        
         <div id="team-carousel" class="owl-carousel owl-theme">
-            <div class="item"><div class="team-card"><img src="vl-team-4.1.webp" alt="John Doe"><h3>John Doe</h3><span>CEO</span></div></div>
-            <div class="item"><div class="team-card"><img src="vl-team-4.2.webp" alt="Jane Smith"><h3>Jane Smith</h3><span>CTO</span></div></div>
-            <div class="item"><div class="team-card"><img src="vl-team-4.3.webp" alt="Emily Johnson"><h3>Emily Johnson</h3><span>Lead Developer</span></div></div>
-            <div class="item"><div class="team-card"><img src="vl-team-4.4.webp" alt="Michael Brown"><h3>Michael Brown</h3><span>Project Manager</span></div></div>
+            <div class="item">
+                <div class="team-card">
+                    <img src="vl-team-4.1.webp" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <span>CEO</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="team-card">
+                    <img src="vl-team-4.2.webp" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <span>CTO</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="team-card">
+                    <img src="vl-team-4.3.webp" alt="Team Member 3">
+                    <h3>Emily Johnson</h3>
+                    <span>Lead Developer</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="team-card">
+                    <img src="vl-team-4.4.webp" alt="Team Member 4">
+                    <h3>Michael Brown</h3>
+                    <span>Project Manager</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
+
+
 <!-- ============================================================
      SECTION 7: TESTIMONIALS
      ============================================================ -->
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testimonial Section</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
     <style>
         .owl-theme .owl-dots .owl-dot span {
@@ -517,9 +540,7 @@
             width: 100%;
         }
     </style>
-</head>
 
-<body class="bg-gray-50 py-16 font-sans overflow-x-hidden">
 
     <section class="w-full relative mt-20">
 
@@ -747,6 +768,14 @@ $(document).ready(function () {
             '<div style="width:48px;height:48px;border:1px solid #d1d5db;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#fff;"><i class="fa-solid fa-arrow-right" style="font-size:18px;"></i></div>'
         ],
         responsive: { 0: { items: 1 }, 600: { items: 1 }, 1025: { items: 1 } }
+    });
+
+    // Custom Navigation for Team Carousel
+    $('.team-next-btn').click(function() {
+        $("#team-carousel").trigger('next.owl.carousel');
+    });
+    $('.team-prev-btn').click(function() {
+        $("#team-carousel").trigger('prev.owl.carousel');
     });
 
     // Testimonials carousel

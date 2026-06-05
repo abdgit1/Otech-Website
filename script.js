@@ -63,3 +63,21 @@ $(document).ready(function(){
         }
     });
 });
+// ← appended after document ready closes; use a new ready block
+$(document).ready(function() {
+    // Custom nav - Testimonials
+    $('.testimonials-prev-btn').on('click', function() {
+        $('#testimonials-carousel').trigger('prev.owl.carousel');
+    });
+    $('.testimonials-next-btn').on('click', function() {
+        $('#testimonials-carousel').trigger('next.owl.carousel');
+    });
+
+    // Custom nav - Team
+    $('.team-prev-btn').on('click', function() {
+        $('#team-carousel').trigger('prev.owl.carousel');
+    });
+    $('.team-next-btn').on('click', function() {
+        $('#team-carousel').trigger('next.owl.carousel');
+    });
+});
