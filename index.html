@@ -37,22 +37,30 @@
 <body>
 
 <section id="HomepageI">
-    <div class="navbar">
-        <div class="logo">
-            <img src="vl-logo-1.1.webp" alt="Logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html" style="color: #ffffff; border-bottom: 2px solid #ffffff; padding-bottom: 2px;">Home</a></li>
-            <li><a href="aboutus.html" style="color: #ffffff;">About</a></li>
-            <li><a href="servicepage.html" style="color: #ffffff;">Services</a></li>
-            <li><a href="#HomepageIV" style="color: #ffffff;">Case Studies</a></li>
-            <li><a href="#HomepageVIII" style="color: #ffffff;">Blogs</a></li>
-            <li><a href="#" style="color: #ffffff;">Pages</a></li>
-        </ul>
-<a href="contact.html" class="nav-btn" style="text-decoration: none;">
-    Get Started <span>&#8599;</span>
-</a>
+   <div class="navbar">
+    <div class="logo">
+        <img src="vl-logo-1.1.webp" alt="Logo">
     </div>
+
+    <button class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <ul class="nav-links">
+        <li><a href="index.html" style="color: #ffffff; border-bottom: 2px solid #ffffff; padding-bottom: 2px;">Home</a></li>
+        <li><a href="aboutus.html" style="color: #ffffff;">About</a></li>
+        <li><a href="servicepage.html" style="color: #ffffff;">Services</a></li>
+        <li><a href="#HomepageIV" style="color: #ffffff;">Case Studies</a></li>
+        <li><a href="#HomepageVIII" style="color: #ffffff;">Blogs</a></li>
+        <li><a href="#" style="color: #ffffff;">Pages</a></li>
+    </ul>
+    
+    <a href="contact.html" class="nav-btn" style="text-decoration: none;">
+        Get Started <span>&#8599;</span>
+    </a>
+</div>
     <div class="hero-container">
         <div class="hero-left">
             <div class="hero-content">
@@ -502,7 +510,18 @@
   </div>
 </footer>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    });
+</script>
+</body>
+</html>
 
 
 

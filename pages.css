@@ -1,6 +1,5 @@
 /* ==========================================================================
    PAGES.CSS — Shared stylesheet for About, Services, Contact inner pages
-   Built from home.css, stripped of home-only offsets, fixed for inner pages
    ========================================================================== */
 
 * {
@@ -15,46 +14,47 @@ body {
 }
 
 /* ==========================================================================
-   NAVBAR (Fixed, same as home)
+   NAVBAR (Responsive)
    ========================================================================== */
-/* 1. Prevent Margin Collapse and lock the background to the top */
-/* 1. Ensure the main container hugs the very top */
 #HomepageI {
     background-color: #4925d0;
     position: relative;
     width: 100%;
 }
 
-/* 2. Floating Navbar (Identical to home.css) */
 .navbar {
     display: flex;
     justify-content: space-between;
-    position: fixed;
-    top: 30px;
     align-items: center;
-    padding: 20px 100px;
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    right: 50px;
     z-index: 1000;
-    font-size: 18px;
-    width: calc(100% - 100px);
-    margin-left: 50px;
-    margin-right: 50px;
+    padding: 15px 40px;
     border-radius: 10px;
     color: #ffffff;
     background-color: #2e0797;
 }
 
+.logo img {
+    max-height: 40px; /* Ensure logo scales properly */
+    width: auto;
+}
 
 .nav-links {
     display: flex;
-    gap: 30px;
-    padding: 0 75px 0 75px;
+    gap: 2vw;
     list-style: none;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: #ffffff;
     transition: opacity 0.2s ease;
+    font-size: 16px;
 }
 
 .nav-links li a:hover {
@@ -75,24 +75,38 @@ body {
     cursor: pointer;
     font-size: 16px;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+/* Hamburger Menu Base Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* Stay above mobile menu */
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 3px;
 }
 
 /* ==========================================================================
-   HERO / BREADCRUMB — Inner page version (not full 100vh)
+   HERO / BREADCRUMB
    ========================================================================== */
-
-/* 3. Shift from padding to margin to match the home page spacing */
-/* 3. The Core Fix: Use Padding, NOT Margin */
 .hero-container {
     background-color: #4925d0;
     min-height: 320px;
-    /* This pushes the content down below the floating navbar, 
-       but keeps the purple background intact! */
-    padding-top: 140px; 
+    padding-top: 120px; /* Fixed spacing */
     margin-top: 0; 
     display: flex;
 }
-
 
 .hero-left {
     flex: 1;
@@ -123,7 +137,7 @@ body {
 }
 
 /* ==========================================================================
-   SHARED UTILITY — .btn, .tag, .title, p
+   SHARED UTILITY
    ========================================================================== */
 .btn {
     background-color: #2e0797;
@@ -170,7 +184,6 @@ body {
     color: #111112;
 }
 
-/* Scoped paragraph style — does NOT override Tailwind's p inside tailwind sections */
 .hero-content p,
 .hero-content a {
     font-size: 18px;
@@ -179,7 +192,7 @@ body {
 }
 
 /* ==========================================================================
-   SERVICE SECTION (from HomepageIII — no extra margin-top for inner pages)
+   SERVICE SECTION
    ========================================================================== */
 .service-container {
     display: flex;
@@ -189,8 +202,6 @@ body {
     justify-content: center;
     background-color: #f4f5f8;
     padding: 80px 50px;
-    /* NOTE: home.css has margin-top: 320px here for the about section offset.
-       Inner pages don't need that — intentionally omitted. */
 }
 
 .service-tag {
@@ -242,8 +253,6 @@ body {
     transition: background-color 0.3s ease;
     text-decoration: none;
 }
-
-
 
 .service-card .service-icon{
     width: 70px;
@@ -308,7 +317,7 @@ body {
 }
 
 /* ==========================================================================
-   TEAM SECTION (HomepageVII)
+   TEAM SECTION
    ========================================================================== */
 .team-container {
     display: flex;
@@ -367,7 +376,6 @@ body {
     font-size: 15px;
 }
 
-/* --- Team Header Row with Custom Nav --- */
 .team-header-wrapper {
     max-width: 1200px;
     width: 100%;
@@ -418,9 +426,8 @@ body {
     display: none !important;
 }
 
-
 /* ==========================================================================
-   BOOTSTRAP PARTNERSHIP SECTION (Scoped)
+   BOOTSTRAP PARTNERSHIP SECTION
    ========================================================================== */
 .bootstrap-scope {
     font-family: 'Figtree', sans-serif;
@@ -511,7 +518,7 @@ body {
 }
 
 /* ==========================================================================
-   CTA BANNER (HomepageIX)
+   CTA BANNER
    ========================================================================== */
 #HomepageIX {
     margin: 100px auto;
@@ -760,39 +767,29 @@ body {
 }
 
 /* ==========================================================================
-   RESPONSIVE
+   RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 1024px) {
+    /* Navbar tweaks for tablet */
     .navbar {
-        padding: 16px 40px;
+        left: 20px;
+        right: 20px;
+        padding: 15px 20px;
     }
     .nav-links {
-        padding: 0 20px;
-        gap: 20px;
+        gap: 15px;
+        font-size: 14px;
     }
-    .hero-left {
-        margin-left: 40px;
-    }
-    .team-container {
-        padding: 70px 30px;
-    }
-    .team-title {
-        font-size: 34px;
-    }
+    .hero-left { margin-left: 40px; }
+    .team-container { padding: 70px 30px; }
+    .team-title { font-size: 34px; }
     .site-footer {
         grid-template-columns: repeat(2, 1fr);
         padding: 60px 5% 4rem 5%;
     }
-    .footer-col.brand-col {
-        grid-column: span 2;
-    }
-    .footer-col.insta-col {
-        grid-column: span 2;
-    }
-    .insta-grid {
-        max-width: 100%;
-        grid-template-columns: repeat(6, 1fr);
-    }
+    .footer-col.brand-col { grid-column: span 2; }
+    .footer-col.insta-col { grid-column: span 2; }
+    .insta-grid { max-width: 100%; grid-template-columns: repeat(6, 1fr); }
     .bootstrap-scope .floating-stats-card {
         position: relative !important;
         left: 0 !important;
@@ -800,17 +797,11 @@ body {
         margin-top: 40px;
         bottom: 0 !important;
     }
-    .bootstrap-scope .content-right-block {
-        margin-bottom: 0;
-        max-width: 100%;
-    }
+    .bootstrap-scope .content-right-block { margin-bottom: 0; max-width: 100%; }
     .bootstrap-scope .tall-img  { height: 380px; }
     .bootstrap-scope .short-img { height: 260px; }
     .bootstrap-scope .partnership-section { padding-bottom: 60px; }
-    #HomepageIX {
-        padding: 0 20px;
-        margin: 60px auto;
-    }
+    #HomepageIX { padding: 0 20px; margin: 60px auto; }
     .banner-container {
         flex-direction: column;
         height: auto;
@@ -819,11 +810,7 @@ body {
         text-align: center;
         overflow: hidden;
     }
-    .banner-left {
-        flex: unset;
-        width: 100%;
-        align-items: center;
-    }
+    .banner-left { flex: unset; width: 100%; align-items: center; }
     .banner-heading { font-size: 26px; text-align: center; }
     .subscribe-input-container { max-width: 100%; width: 100%; }
     .banner-right {
@@ -839,40 +826,49 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* Mobile Navbar Behavior */
     .navbar {
-        padding: 14px 20px;
-        font-size: 15px;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        padding: 15px 20px;
     }
     .nav-links {
-        display: none; /* mobile: hide links, show hamburger if added later */
+        display: none; /* Hidden by default on mobile */
     }
-    .hero-left {
+    .hamburger {
+        display: flex; /* Show hamburger button */
+        margin-right: auto;
         margin-left: 20px;
-        margin-right: 20px;
     }
-    .hero-container {
+    .nav-links.active {
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        padding-bottom: 20px;
+        position: absolute;
+        top: 70px; /* drops down below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: #2e0797;
+        padding: 20px;
+        text-align: center;
+        gap: 15px;
     }
-    .hero-right {
-        display: none; /* hide breadcrumb image on mobile */
+    .nav-btn {
+        padding: 8px 16px;
+        font-size: 14px;
     }
+    
+    .hero-left { margin-left: 20px; margin-right: 20px; }
+    .hero-container { flex-direction: column; align-items: center; padding-bottom: 20px; }
+    .hero-right { display: none; }
     .team-container { padding: 50px 20px; }
     .team-title { font-size: 26px; }
     .service-container { padding: 50px 20px; }
     .service-title { font-size: 30px; }
     .service-cards { margin: 20px; }
-    .site-footer {
-        grid-template-columns: repeat(2, 1fr);
-        padding-top: 40px;
-    }
-    .bottom-footer-container {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-        width: 90%;
-    }
+    .site-footer { grid-template-columns: repeat(2, 1fr); padding-top: 40px; }
+    .bottom-footer-container { flex-direction: column; gap: 10px; text-align: center; width: 90%; }
     .banner-container { padding: 36px 20px 0 20px; }
     .banner-heading { font-size: 22px; }
     .banner-right { height: 180px; }
@@ -891,13 +887,8 @@ body {
     }
     .footer-col.brand-col,
     .footer-col.insta-col,
-    .footer-col.links-col {
-        grid-column: span 1;
-    }
-    .insta-grid {
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 220px;
-    }
+    .footer-col.links-col { grid-column: span 1; }
+    .insta-grid { grid-template-columns: repeat(3, 1fr); max-width: 220px; }
     #HomepageIX { padding: 0 12px; margin: 40px auto; }
     .subscribe-input-container {
         flex-direction: column;

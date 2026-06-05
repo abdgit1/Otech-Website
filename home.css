@@ -33,6 +33,23 @@ body{
     background-color: #2e0797;
     
 }
+/* Hamburger Menu Base Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; 
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 3px;
+}
 
 .nav-links{
     display: flex;
@@ -1444,11 +1461,38 @@ p{
         margin: 0 10px;
         padding: 12px 16px;
         justify-content: space-between;
+        flex-wrap: nowrap; /* Keep items in one row */
     }
-    /* hide nav links — hamburger would live here */
+    
+    /* Show the hamburger on mobile */
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+        margin-right: 15px; /* Spacing between hamburger and Get Started button */
+    }
+
+    /* Hide links by default on mobile */
     .nav-links {
         display: none;
     }
+
+
+  /* The active state toggled by JavaScript */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 65px; /* Drops menu right below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: #2e0797;
+        padding: 20px 0;
+        text-align: center;
+        gap: 15px;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
     .logo img {
         max-width: 90px;
         height: auto;
