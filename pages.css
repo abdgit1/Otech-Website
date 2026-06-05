@@ -17,24 +17,32 @@ body {
 /* ==========================================================================
    NAVBAR (Fixed, same as home)
    ========================================================================== */
+/* 1. Prevent Margin Collapse and lock the background to the top */
+/* 1. Ensure the main container hugs the very top */
 #HomepageI {
     background-color: #4925d0;
     position: relative;
+    width: 100%;
 }
 
+/* 2. Floating Navbar (Identical to home.css) */
 .navbar {
     display: flex;
     justify-content: space-between;
     position: fixed;
-    top: 0;
+    top: 30px;
     align-items: center;
     padding: 20px 100px;
     z-index: 1000;
     font-size: 18px;
-    width: 100%;
+    width: calc(100% - 100px);
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
     color: #ffffff;
     background-color: rgb(68, 25, 197);
 }
+
 
 .nav-links {
     display: flex;
@@ -72,12 +80,19 @@ body {
 /* ==========================================================================
    HERO / BREADCRUMB — Inner page version (not full 100vh)
    ========================================================================== */
+
+/* 3. Shift from padding to margin to match the home page spacing */
+/* 3. The Core Fix: Use Padding, NOT Margin */
 .hero-container {
     background-color: #4925d0;
     min-height: 320px;
-    padding-top: 80px; /* offset fixed navbar */
+    /* This pushes the content down below the floating navbar, 
+       but keeps the purple background intact! */
+    padding-top: 140px; 
+    margin-top: 0; 
     display: flex;
 }
+
 
 .hero-left {
     flex: 1;

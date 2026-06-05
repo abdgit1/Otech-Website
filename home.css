@@ -513,6 +513,7 @@ p{
 #HomepageV{
     background-color: #4925d0;
     padding: 100px 0;
+    position: relative;
 }
 
 .testimonials-container{
@@ -566,7 +567,13 @@ p{
 }
 
 .testimonials-right{
+    position: relative;
     width: 100%;
+    overflow: hidden;
+}
+
+.testimonials-carousel-wrap {
+    width: calc(100% - 68px);
     overflow: hidden;
 }
 
@@ -758,15 +765,6 @@ p{
     background-color: #f4f5f8;
 }
 
-.team-header-wrapper {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
 .team-tag {
     display: inline-block;
     border: 1px rgba(46, 7, 151, 0.2);
@@ -815,6 +813,101 @@ p{
     color: #5e3bee;
     font-weight: 500;
     font-size: 15px;
+}
+
+/* --- Team Header Row with Custom Nav --- */
+.team-header-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.team-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.team-custom-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+.team-prev-btn,
+.team-next-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(73, 37, 208, 0.12);
+    color: #111112;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.team-prev-btn:hover,
+.team-next-btn:hover {
+    background-color: rgba(73, 37, 208, 0.28);
+}
+
+#team-carousel .owl-nav {
+    display: none !important;
+}
+
+/* --- Testimonials Custom Nav (inline beside carousel) --- */
+.testimonials-custom-nav {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+    width: 48px;
+}
+
+.testimonials-prev-btn,
+.testimonials-next-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    backdrop-filter: blur(4px);
+}
+
+.testimonials-prev-btn:hover,
+.testimonials-next-btn:hover {
+    background-color: rgba(255, 255, 255, 0.38);
+}
+
+#testimonials-carousel .owl-nav {
+    display: none !important;
+}
+
+#testimonials-carousel .owl-dots {
+    display: none !important;
 }
 
 /* --- Blog Section --- */

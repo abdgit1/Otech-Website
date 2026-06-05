@@ -221,7 +221,8 @@
         </div>
         
         <div class="testimonials-right">
-            <div id="testimonials-carousel" class="owl-carousel owl-theme">
+            <div class="testimonials-carousel-wrap">
+                <div id="testimonials-carousel" class="owl-carousel owl-theme">
                 <div class="item">
                     <div class="testimonials-card">
                         <div class="stars">★★★★★</div>
@@ -270,11 +271,15 @@
                             </div>
                             <img src="vl-testimonial-q2.svg" alt="Quote" class="quote-icon">
                         </div>
-                    </div>
-                </div>
+                        </div><!-- /item -->
+            </div><!-- /owl-carousel -->
+            </div><!-- /testimonials-carousel-wrap -->
+            <div class="testimonials-custom-nav">
+                <button class="testimonials-prev-btn"><i class="fa-solid fa-arrow-left-long"></i></button>
+                <button class="testimonials-next-btn"><i class="fa-solid fa-arrow-right-long"></i></button>
             </div>
-        </div>
-    </div>
+        </div><!-- end testimonials-right -->
+    </div><!-- end testimonials-container -->
 </section>
 
 <section id="HomepageVI">
@@ -343,8 +348,14 @@
 <section id="HomepageVII">
     <div class="team-container">
         <div class="team-header-wrapper">
-            <h4 class="team-tag">OUR TEAM</h4>
-            <h2 class="team-title">Dedicated Professionals,<br>Proven Results</h2>
+            <div class="team-header-text">
+                <h4 class="team-tag">OUR TEAM</h4>
+                <h2 class="team-title">Dedicated Professionals,<br>Proven Results</h2>
+            </div>
+            <div class="team-custom-nav">
+                <button class="team-prev-btn"><i class="fa-solid fa-arrow-left-long"></i></button>
+                <button class="team-next-btn"><i class="fa-solid fa-arrow-right-long"></i></button>
+            </div>
         </div>
         
         <div id="team-carousel" class="owl-carousel owl-theme">
